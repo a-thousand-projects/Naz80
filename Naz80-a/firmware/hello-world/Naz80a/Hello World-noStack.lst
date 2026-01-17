@@ -1,0 +1,127 @@
+---------------------------------------------
+OSHONSOFT Z80 ASSEMBLER LISTING
+Line   Addr Opcode      Label   Instruction
+---------------------------------------------
+0001   0000             FNCSET	.equ	$38
+0002   0000             DSPCTRL	.equ	$0f
+0003   0000             
+0004   0000             DATAREG .equ 	$1
+0005   0000             CMDREG	.equ	$0
+0006   0000             MS_DELAY .equ	$03E8
+0007   0000             ;MS_DELAY .equ	$0001
+0008   0000             
+0009   0000             
+0010   0000             
+0011   0000             ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+0012   0000             ; http://www.48k.ca/zmac.html
+0013   0000             ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+0014   0000             
+0015   0000             start:
+0016   0000             
+0017   0000 31 FF F0    	LD SP,$F0FF
+0018   0003             
+0019   0003             
+0020   0003 01 E8 03    	LD BC,MS_DELAY
+0021   0006 0B          DelayLoop1: DEC BC       ; Decrement BC (6 cycles)
+0022   0007 78          	LD A, B      ; Load B into A (4 cycles)
+0023   0008 B1          	OR C         ; OR with C (4 cycles) (Set Zero flag if BC = 0)
+0024   0009 C2 06 00    	JP NZ, DelayLoop1  ; Jump to DelayLoop if BC is not zero (10 cycles if taken)
+0025   000C             
+0026   000C             
+0027   000C             
+0028   000C 3E 38       	LD A,FNCSET
+0029   000E D3 00       	OUT (CMDREG),A
+0030   0010             
+0031   0010             
+0032   0010 01 E8 03    	LD BC,MS_DELAY
+0033   0013 0B          DelayLoop2: DEC BC       ; Decrement BC (6 cycles)
+0034   0014 78          	LD A, B      ; Load B into A (4 cycles)
+0035   0015 B1          	OR C         ; OR with C (4 cycles) (Set Zero flag if BC = 0)
+0036   0016 C2 13 00    	JP NZ, DelayLoop2  ; Jump to DelayLoop if BC is not zero (10 cycles if taken)
+0037   0019             
+0038   0019             
+0039   0019             	;LD BC,MS_DELAY
+0040   0019             	;call DELAY
+0041   0019             
+0042   0019 3E 0F       	LD A,DSPCTRL
+0043   001B D3 00       	OUT (CMDREG),A
+0044   001D             
+0045   001D             
+0046   001D 01 E8 03    	LD BC,MS_DELAY
+0047   0020 0B          DelayLoop3: DEC BC       ; Decrement BC (6 cycles)
+0048   0021 78          	LD A, B      ; Load B into A (4 cycles)
+0049   0022 B1          	OR C         ; OR with C (4 cycles) (Set Zero flag if BC = 0)
+0050   0023 C2 20 00    	JP NZ, DelayLoop3  ; Jump to DelayLoop if BC is not zero (10 cycles if taken)
+0051   0026             
+0052   0026             	;LD BC,MS_DELAY
+0053   0026             	;call DELAY
+0054   0026             
+0055   0026 3E 06       	LD A,$06
+0056   0028 D3 00       	OUT (CMDREG),A
+0057   002A             
+0058   002A 01 E8 03    	LD BC,MS_DELAY
+0059   002D 0B          DelayLoop4: DEC BC       ; Decrement BC (6 cycles)
+0060   002E 78          	LD A, B      ; Load B into A (4 cycles)
+0061   002F B1          	OR C         ; OR with C (4 cycles) (Set Zero flag if BC = 0)
+0062   0030 C2 2D 00    	JP NZ, DelayLoop4  ; Jump to DelayLoop if BC is not zero (10 cycles if taken)
+0063   0033             	;LD BC,MS_DELAY
+0064   0033             	;call DELAY
+0065   0033             
+0066   0033 3E 01       	LD A,$01
+0067   0035 D3 00       	OUT (CMDREG),A
+0068   0037             
+0069   0037 01 E8 03    	LD BC,MS_DELAY
+0070   003A 0B          DelayLoop5: DEC BC       ; Decrement BC (6 cycles)
+0071   003B 78          	LD A, B      ; Load B into A (4 cycles)
+0072   003C B1          	OR C         ; OR with C (4 cycles) (Set Zero flag if BC = 0)
+0073   003D C2 3A 00    	JP NZ, DelayLoop5  ; Jump to DelayLoop if BC is not zero (10 cycles if taken)
+0074   0040             
+0075   0040             	;LD BC,MS_DELAY
+0076   0040             	;call DELAY
+0077   0040             
+0078   0040             
+0079   0040 01 6B 00    	LD bc,str
+0080   0043 0A          print:	LD A, (bc)
+0081   0044 FE 00       	CP 0
+0082   0046 28 0E       	jr z, END
+0083   0048 D3 01       	OUT (DATAREG),A
+0084   004A             
+0085   004A 21 E8 03    	LD HL,MS_DELAY
+0086   004D 2B          DelayLoop6: DEC HL       ; Decrement BC (6 cycles)
+0087   004E 7D          	LD A, L      ; Load B into A (4 cycles)
+0088   004F B4          	OR H         ; OR with C (4 cycles) (Set Zero flag if BC = 0)
+0089   0050 C2 4D 00    	JP NZ, DelayLoop6  ; Jump to DelayLoop if BC is not zero (10 cycles if taken)
+0090   0053             
+0091   0053             
+0092   0053 03          	inc BC
+0093   0054 18 ED       	jr print
+0094   0056             END:
+0095   0056 21 E8 03    	LD HL,MS_DELAY
+0096   0059 2B          DelayLoop7: DEC HL       ; Decrement BC (6 cycles)
+0097   005A 7D          	LD A, L      ; Load B into A (4 cycles)
+0098   005B B4          	OR H         ; OR with C (4 cycles) (Set Zero flag if BC = 0)
+0099   005C C2 59 00    	JP NZ, DelayLoop7  ; Jump to DelayLoop if BC is not zero (10 cycles if taken)
+0100   005F             
+0101   005F             	; Test Stack
+0102   005F 26 41       	LD H, $41
+0103   0061 2E 51       	LD L, $51
+0104   0063 E5          	push HL
+0105   0064 26 52       	LD H, $52
+0106   0066 E1          	POP HL
+0107   0067             	;LD A,H
+0108   0067 7C          	LD A,H
+0109   0068 D3 01       	OUT (DATAREG),A
+0110   006A             
+0111   006A             
+0112   006A             
+0113   006A             
+0114   006A 76          	halt
+0115   006B             
+0116   006B             
+0117   006B 48 65 6C 6C str:	defb "Hello World!"
+0117   006F 6F 20 57 6F 
+0117   0073 72 6C 64 21 
+0118   0077 00          	defb 0
+0119   0078             
+0120   0078             
+Number of errors = 0

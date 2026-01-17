@@ -1,0 +1,9 @@
+---------------------------------------------
+OSHONSOFT Z80 ASSEMBLER LISTING
+Line   Addr Opcode      Label   Instruction
+---------------------------------------------
+0001   0000             ; Mem test
+0002   0000 21 FF F0    	LD HL, $F0FF
+0003   0003 36 AA       	LD (HL),$AA
+0004   0005 7E          	LD A,(HL)
+Number of errors = 0
