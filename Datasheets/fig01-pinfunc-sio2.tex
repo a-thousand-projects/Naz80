@@ -1,0 +1,88 @@
+% Figure 1. Pin Functions -- Z80 SIO/2
+% Geometry knobs: BW = body width, PY = row pitch.
+\begin{tikzpicture}[x=1cm,y=1cm,baseline=(current bounding box.north)]
+  \def\BW{2.30}          % chip body width
+  \def\BH{7.60}          % chip body height
+  \def\LX{-0.78}         % left  lead end
+  \def\RX{3.08}          % right lead end
+  \def\LB{-0.98}         % left  brace x
+  \def\RBa{3.22}         % right inner brace x (modem control)
+  \def\RBb{4.34}         % right outer brace x (channel)
+
+  \draw[chipbox] (0,0) rectangle (\BW,-\BH);
+
+  % ---- left side: name inside the body, lead + arrowhead outside ----------
+  % #1 = y, #2 = label, #3 = direction (in|out|bi)
+  \newcommand{\lsig}[3]{%
+    \node[figfont, anchor=west] at (0.10,#1) {#2};
+    \ifthenelse{\equal{#3}{in}}{\draw[sigarrow]  (\LX,#1) -- (0,#1);}{}%
+    \ifthenelse{\equal{#3}{out}}{\draw[sigarrowr](\LX,#1) -- (0,#1);}{}%
+    \ifthenelse{\equal{#3}{bi}}{\draw[sigboth]   (\LX,#1) -- (0,#1);}{}%
+  }
+  \newcommand{\rsig}[3]{%
+    \node[figfont, anchor=east] at (\BW-0.10,#1) {#2};
+    \ifthenelse{\equal{#3}{in}}{\draw[sigarrowr] (\BW,#1) -- (\RX,#1);}{}%
+    \ifthenelse{\equal{#3}{out}}{\draw[sigarrow] (\BW,#1) -- (\RX,#1);}{}%
+    \ifthenelse{\equal{#3}{bi}}{\draw[sigboth]   (\BW,#1) -- (\RX,#1);}{}%
+  }
+
+  % CPU data bus
+  \lsig{-0.50}{\D{0}}{bi}   \lsig{-0.86}{\D{1}}{bi}
+  \lsig{-1.22}{\D{2}}{bi}   \lsig{-1.58}{\D{3}}{bi}
+  \lsig{-1.94}{\D{4}}{bi}   \lsig{-2.30}{\D{5}}{bi}
+  \lsig{-2.66}{\D{6}}{bi}   \lsig{-3.02}{\D{7}}{bi}
+  % Control from CPU
+  \lsig{-3.62}{\ol{CE}}{in}    \lsig{-3.98}{\ol{RESET}}{in}
+  \lsig{-4.34}{\ol{M1}}{in}    \lsig{-4.70}{\ol{IORQ}}{in}
+  \lsig{-5.06}{\ol{RD}}{in}    \lsig{-5.42}{C/\ol{D}}{in}
+  \lsig{-5.78}{B/\ol{A}}{in}
+  % Daisy chain
+  \lsig{-6.38}{\ol{INT}}{out}  \lsig{-6.74}{IEI}{in}
+  \lsig{-7.10}{IEO}{out}
+
+  % ---- right side ---------------------------------------------------------
+  \rsig{-0.42}{RxDA}{in}        \rsig{-0.78}{\ol{RxCA}}{in}
+  \rsig{-1.14}{TxDA}{out}       \rsig{-1.50}{\ol{TxCA}}{in}
+  \rsig{-1.86}{\ol{SYNCA}}{bi}  \rsig{-2.22}{\ol{W/RDYA}}{out}
+  \rsig{-2.66}{\ol{RTSA}}{out}  \rsig{-3.02}{\ol{CTSA}}{in}
+  \rsig{-3.38}{\ol{DTRA}}{out}  \rsig{-3.74}{\ol{DCDA}}{in}
+
+  \rsig{-4.30}{RxDB}{in}        \rsig{-4.66}{\ol{RxCB}}{in}
+  \rsig{-5.02}{TxDB}{out}       \rsig{-5.38}{\ol{TxCB}}{in}
+  \rsig{-5.74}{\ol{W/RDYB}}{out}
+  \rsig{-6.18}{\ol{RTSB}}{out}  \rsig{-6.54}{\ol{CTSB}}{in}
+  \rsig{-6.90}{\ol{DTRB}}{out}  \rsig{-7.26}{\ol{DCDB}}{in}
+
+  % ---- device name --------------------------------------------------------
+  \node[figfont, align=center, font=\sffamily\fontsize{5.4}{6}\selectfont]
+    at (\BW/2,-3.32) {Z80\\SIO/2};
+
+  % ---- power / clock ------------------------------------------------------
+  \foreach \x/\lab in {0.55/+5\,V, 1.15/GND, 1.75/CLK} {
+    \draw[sigarrow] (\x,-8.20) -- (\x,-\BH);
+    \node[figfont, anchor=north] at (\x,-8.28) {\lab};
+  }
+
+  % ---- grouping braces ----------------------------------------------------
+  % left braces bulge toward the labels (draw bottom-to-top)
+  \draw[grpbrace] (\LB,-3.02) -- (\LB,-0.50);
+  \node[figfont, anchor=east, align=center] at (\LB-0.14,-1.76) {CPU\\DATA BUS};
+
+  \draw[grpbrace] (\LB,-5.78) -- (\LB,-3.62);
+  \node[figfont, anchor=east, align=center] at (\LB-0.14,-4.70) {CONTROL\\FROM CPU};
+
+  \draw[grpbrace] (\LB,-7.10) -- (\LB,-6.38);
+  \node[figfont, anchor=east, align=center] at (\LB-0.14,-6.74)
+    {DAISY\\CHAIN\\INTERRUPT\\CONTROL};
+
+  % right braces bulge toward the labels (draw top-to-bottom)
+  \draw[grpbrace] (\RBa,-2.66) -- (\RBa,-3.74);
+  \node[figfont, anchor=west, align=center] at (\RBa+0.14,-3.20) {MODEM\\CONTROL};
+  \draw[grpbrace] (\RBa,-6.18) -- (\RBa,-7.26);
+  \node[figfont, anchor=west, align=center] at (\RBa+0.14,-6.72) {MODEM\\CONTROL};
+
+  \draw[grpbrace] (\RBb,-0.42) -- (\RBb,-3.74);
+  \node[figfont, anchor=west] at (\RBb+0.14,-2.08) {CHANNEL A};
+  \draw[grpbrace] (\RBb,-4.30) -- (\RBb,-7.26);
+  \node[figfont, anchor=west] at (\RBb+0.14,-5.78) {CHANNEL B};
+\end{tikzpicture}

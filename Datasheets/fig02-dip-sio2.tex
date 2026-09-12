@@ -1,0 +1,40 @@
+% Figure 2. 40-pin Dual-In-Line Package (DIP), Pin Assignments -- Z80 SIO/2
+% Pin lists read top-to-bottom: \leftpins is pins 1..20, \rightpins is 40..21.
+\begin{tikzpicture}[x=1cm,y=1cm,baseline=(current bounding box.north)]
+  \def\BW{1.52}      % package body width
+  \def\PY{0.335}     % pin pitch
+  \def\PT{0.45}      % y of pin 1
+  \def\SW{0.155}     % pin stub width
+  \def\SH{0.085}     % pin stub half-height
+
+  \pgfmathsetmacro{\BH}{\PT+19*\PY+0.45}
+  \draw[chipbox] (0,0) rectangle (\BW,-\BH);
+  % index notch
+  \draw[line width=0.4pt] (\BW/2-0.16,0) arc (180:360:0.16);
+
+  % left column: pins 1..20
+  \foreach \n/\lab [count=\i from 0] in {%
+    1/\D{1}, 2/\D{3}, 3/\D{5}, 4/\D{7}, 5/\ol{INT}, 6/IEI, 7/IEO, 8/\ol{M1},
+    9/{+5\,V}, 10/\ol{W/RDYA}, 11/\ol{SYNCA}, 12/RxDA, 13/\ol{RxCA}, 14/\ol{TxCA},
+    15/TxDA, 16/\ol{DTRA}, 17/\ol{RTSA}, 18/\ol{CTSA}, 19/\ol{DCDA}, 20/CLK} {
+    \pgfmathsetmacro{\y}{-\PT-\i*\PY}
+    \draw[line width=0.35pt] (-\SW,\y-\SH) rectangle (0,\y+\SH);
+    \node[figfont, anchor=west] at (0.09,\y) {\n};
+    \node[figfont, anchor=east] at (-\SW-0.08,\y) {\lab};
+  }
+
+  % right column: pins 40..21
+  \foreach \n/\lab [count=\i from 0] in {%
+    40/\D{0}, 39/\D{2}, 38/\D{4}, 37/\D{6}, 36/\ol{IORQ}, 35/\ol{CE}, 34/{B/\ol{A}},
+    33/{C/\ol{D}}, 32/\ol{RD}, 31/GND, 30/\ol{W/RDYB}, 29/RxDB, 28/\ol{RxCB},
+    27/\ol{TxCB}, 26/TxDB, 25/\ol{DTRB}, 24/\ol{RTSB}, 23/\ol{CTSB},
+    22/\ol{DCDB}, 21/\ol{RESET}} {
+    \pgfmathsetmacro{\y}{-\PT-\i*\PY}
+    \draw[line width=0.35pt] (\BW,\y-\SH) rectangle (\BW+\SW,\y+\SH);
+    \node[figfont, anchor=east] at (\BW-0.09,\y) {\n};
+    \node[figfont, anchor=west] at (\BW+\SW+0.08,\y) {\lab};
+  }
+
+  \node[figfont, align=center, font=\sffamily\fontsize{5.4}{6}\selectfont]
+    at (\BW/2,-3.55) {Z80\\SIO/2};
+\end{tikzpicture}

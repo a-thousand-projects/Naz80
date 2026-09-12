@@ -1,0 +1,116 @@
+% ---------------------------------------------------------------------------
+%  z80sio.sty -- house style for the Zilog Z8440/Z84C40 SIO datasheet recreation
+%
+%  All layout / typography decisions live here so the body text stays clean.
+%  Tune the LENGTHS and FONT SIZES block below to nudge the whole document.
+% ---------------------------------------------------------------------------
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{z80sio}[2026/09/12 Zilog datasheet house style]
+
+\RequirePackage[T1]{fontenc}
+\RequirePackage{mathptmx}                 % Times -- body text
+\RequirePackage[scaled=0.94]{helvet}      % Helvetica -- headings, figure labels
+\RequirePackage{multicol}
+\RequirePackage{fancyhdr}
+\RequirePackage{tikz}
+\RequirePackage{ifthen}
+\usetikzlibrary{decorations.pathreplacing,calc,arrows.meta}
+
+% ------------------------- LENGTHS & FONT SIZES ----------------------------
+\newcommand{\bodysize}{\fontsize{8.4}{10.0}\selectfont}   % two-column body
+\newcommand{\headsize}{\fontsize{10}{12}\selectfont}      % SECTION HEADINGS
+\newcommand{\figlblsize}{\fontsize{4.8}{5.6}\selectfont}  % inside figures
+\newcommand{\figcapsize}{\fontsize{6.4}{7.6}\selectfont}  % figure captions
+\newcommand{\footsize}{\fontsize{7.6}{9}\selectfont}      % running footer
+
+\setlength{\columnsep}{18pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+\newcommand{\rulethick}{0.9pt}   % section-divider rules
+\newcommand{\rulethin}{0.5pt}
+
+\newcommand{\docid}{PS018301-0602}
+
+% ------------------------------- HELPERS -----------------------------------
+% Active-low overbar that follows whatever font is current (works in figures).
+\newcommand{\ol}[1]{\ensuremath{\overline{\hbox{#1}}}}
+% Subscripted data-bus pins: \D{0} -> D_0
+\newcommand{\D}[1]{D\textsubscript{#1}}
+
+% Full-width divider rule
+\newcommand{\dsrule}{\par\nobreak\vspace{4pt}%
+  \noindent\rule{\textwidth}{\rulethick}\par\nobreak\vspace{2pt}}
+\newcommand{\dsrulethin}{\par\nobreak\vspace{3pt}%
+  \noindent\rule{\textwidth}{\rulethin}\par\nobreak\vspace{2pt}}
+
+% SECTION HEADING  (Helvetica bold caps, sits under a divider rule)
+\newcommand{\dshead}[1]{\par\nobreak
+  {\sffamily\bfseries\headsize #1}\par\nobreak\vspace{3pt}}
+
+% Two-column body block
+\newenvironment{dscols}{\bodysize\begin{multicols}{2}}{\end{multicols}}
+
+% Bullet list with the solid square marker Zilog used
+\newenvironment{featlist}{%
+  \begin{list}{\raisebox{0.18ex}{\rule{4pt}{4pt}}}{%
+    \setlength{\leftmargin}{11pt}\setlength{\labelwidth}{4pt}%
+    \setlength{\labelsep}{7pt}\setlength{\itemindent}{0pt}%
+    \setlength{\topsep}{0pt}\setlength{\itemsep}{6pt}%
+    \setlength{\parsep}{0pt}\setlength{\partopsep}{0pt}}}%
+  {\end{list}}
+
+% Pin-description entry: bold sans name, italic expansion, roman body
+\newcommand{\pin}[3]{{\sffamily\bfseries #1}\ \textit{#2} #3\par}
+
+% ------------------------------- FIGURES -----------------------------------
+\newcommand{\figcap}[2]{\par\vspace{4pt}%
+  {\centering\sffamily\bfseries\figcapsize Figure #1.\ #2\par}}
+
+\tikzset{
+  figfont/.style   = {font=\sffamily\figlblsize, inner sep=0.6pt},
+  chipbox/.style   = {draw, line width=0.5pt},
+  siglead/.style   = {line width=0.35pt},
+  sigarrow/.style  = {siglead, -{Straight Barb[length=1.6pt,width=2.0pt]}},
+  sigarrowr/.style = {siglead, {Straight Barb[length=1.6pt,width=2.0pt]}-},
+  sigboth/.style   = {siglead, {Straight Barb[length=1.6pt,width=2.0pt]}-%
+                      {Straight Barb[length=1.6pt,width=2.0pt]}},
+  grpbrace/.style  = {line width=0.35pt, decorate,
+                      decoration={brace, amplitude=2.4pt, raise=0pt}},
+}
+
+% ------------------------------ PAGE FURNITURE ------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+% Zilog alternated the doc-id and folio: odd pages id-left/folio-right,
+% even pages folio-left/id-right.
+\fancyfoot[LO,RE]{\sffamily\bfseries\footsize\docid}
+\fancyfoot[RO,LE]{\sffamily\bfseries\footsize\thepage}
+\newcommand{\pagefootrule}{\par\vfill\noindent\rule{\textwidth}{\rulethick}}
+
+% Masthead used on the opening page of a product specification
+\newcommand{\masthead}[3]{%
+  \noindent
+  \begin{minipage}[t]{0.30\textwidth}
+    \vspace{0pt}
+    \begin{tikzpicture}
+      \fill[black] (0,0) rectangle (3.55,1.15);
+      \node[white, font=\sffamily\bfseries\fontsize{15}{15}\selectfont]
+        at (1.9,0.60) {\raisebox{0.5ex}{\scalebox{0.75}{$\otimes$}}\hspace{1pt}%
+        \scalebox{1.12}[1]{ZiL\kern-1pt O\kern-1pt G}};
+    \end{tikzpicture}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[t]{0.66\textwidth}
+    \vspace{0pt}
+    {\sffamily\fontsize{8}{9}\selectfont #1}\par
+    \vspace{2pt}\noindent\rule{\linewidth}{\rulethin}\par
+    \vspace{5pt}
+    {\sffamily\bfseries\fontsize{17}{19}\selectfont #2}\par
+    \vspace{3pt}
+    {\sffamily\fontsize{10.5}{12}\selectfont #3}\par
+  \end{minipage}\par
+}
+
+\endinput

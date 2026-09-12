@@ -1,7 +1,7 @@
 (kicad_pcb
-	(version 20240108)
+	(version 20260206)
 	(generator "pcbnew")
-	(generator_version "8.0")
+	(generator_version "10.0")
 	(general
 		(thickness 1.6)
 		(legacy_teardrops no)
@@ -9,68 +9,81 @@
 	(paper "A4")
 	(layers
 		(0 "F.Cu" signal)
-		(31 "B.Cu" signal)
-		(32 "B.Adhes" user "B.Adhesive")
-		(33 "F.Adhes" user "F.Adhesive")
-		(34 "B.Paste" user)
-		(35 "F.Paste" user)
-		(36 "B.SilkS" user "B.Silkscreen")
-		(37 "F.SilkS" user "F.Silkscreen")
-		(38 "B.Mask" user)
-		(39 "F.Mask" user)
-		(40 "Dwgs.User" user "User.Drawings")
-		(41 "Cmts.User" user "User.Comments")
-		(42 "Eco1.User" user "User.Eco1")
-		(43 "Eco2.User" user "User.Eco2")
-		(44 "Edge.Cuts" user)
-		(45 "Margin" user)
-		(46 "B.CrtYd" user "B.Courtyard")
-		(47 "F.CrtYd" user "F.Courtyard")
-		(48 "B.Fab" user)
-		(49 "F.Fab" user)
-		(50 "User.1" user)
-		(51 "User.2" user)
-		(52 "User.3" user)
-		(53 "User.4" user)
-		(54 "User.5" user)
-		(55 "User.6" user)
-		(56 "User.7" user)
-		(57 "User.8" user)
-		(58 "User.9" user)
+		(2 "B.Cu" signal)
+		(9 "F.Adhes" user "F.Adhesive")
+		(11 "B.Adhes" user "B.Adhesive")
+		(13 "F.Paste" user)
+		(15 "B.Paste" user)
+		(5 "F.SilkS" user "F.Silkscreen")
+		(7 "B.SilkS" user "B.Silkscreen")
+		(1 "F.Mask" user)
+		(3 "B.Mask" user)
+		(17 "Dwgs.User" user "User.Drawings")
+		(19 "Cmts.User" user "User.Comments")
+		(21 "Eco1.User" user "User.Eco1")
+		(23 "Eco2.User" user "User.Eco2")
+		(25 "Edge.Cuts" user)
+		(27 "Margin" user)
+		(31 "F.CrtYd" user "F.Courtyard")
+		(29 "B.CrtYd" user "B.Courtyard")
+		(35 "F.Fab" user)
+		(33 "B.Fab" user)
+		(39 "User.1" user)
+		(41 "User.2" user)
+		(43 "User.3" user)
+		(45 "User.4" user)
+		(47 "User.5" user)
+		(49 "User.6" user)
+		(51 "User.7" user)
+		(53 "User.8" user)
+		(55 "User.9" user)
 	)
 	(setup
 		(pad_to_mask_clearance 0)
 		(allow_soldermask_bridges_in_footprints no)
+		(tenting
+			(front yes)
+			(back yes)
+		)
+		(covering
+			(front no)
+			(back no)
+		)
+		(plugging
+			(front no)
+			(back no)
+		)
+		(capping no)
+		(filling no)
 		(pcbplotparams
-			(layerselection 0x00010fc_ffffffff)
-			(plot_on_all_layers_selection 0x0000000_00000000)
+			(layerselection 0x00000000_00000000_55555555_5755f5ff)
+			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
 			(disableapertmacros no)
 			(usegerberextensions no)
 			(usegerberattributes yes)
 			(usegerberadvancedattributes yes)
 			(creategerberjobfile yes)
-			(dashed_line_dash_ratio 12.000000)
-			(dashed_line_gap_ratio 3.000000)
+			(dashed_line_dash_ratio 12)
+			(dashed_line_gap_ratio 3)
 			(svgprecision 4)
 			(plotframeref no)
-			(viasonmask no)
 			(mode 1)
 			(useauxorigin no)
-			(hpglpennumber 1)
-			(hpglpenspeed 20)
-			(hpglpendiameter 15.000000)
 			(pdf_front_fp_property_popups yes)
 			(pdf_back_fp_property_popups yes)
+			(pdf_metadata yes)
+			(pdf_single_document no)
 			(dxfpolygonmode yes)
 			(dxfimperialunits yes)
 			(dxfusepcbnewfont yes)
 			(psnegative no)
 			(psa4output no)
-			(plotreference yes)
-			(plotvalue yes)
-			(plotfptext yes)
-			(plotinvisibletext no)
+			(plot_black_and_white yes)
 			(sketchpadsonfab no)
+			(plotpadnumbers no)
+			(hidednponfab no)
+			(sketchdnponfab yes)
+			(crossoutdnponfab yes)
 			(subtractmaskfromsilk no)
 			(outputformat 1)
 			(mirror no)
@@ -79,7 +92,6 @@
 			(outputdirectory "")
 		)
 	)
-	(net 0 "")
 	(footprint "Package_DIP:DIP-28_W15.24mm_Socket_LongPads"
 		(layer "F.Cu")
 		(uuid "4a7ce655-ab79-4d5a-afb4-4b0525ee0387")
@@ -104,19 +116,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Footprint" "Package_DIP:DIP-28_W15.24mm_Socket_LongPads"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "76342641-da17-4178-8110-86f6146986c5")
-			(effects
-				(font
-					(size 1.27 1.27)
 					(thickness 0.15)
 				)
 			)
@@ -148,6 +147,7 @@
 			)
 		)
 		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -1.44 -1.39)
 			(end -1.44 34.41)
@@ -614,7 +614,8 @@
 			(remove_unused_layers no)
 			(uuid "e15bc6c7-2ed8-4305-b7c6-7a92d9ae7b9a")
 		)
-		(model "${KICAD8_3DMODEL_DIR}/Package_DIP.3dshapes/DIP-28_W15.24mm_Socket.wrl"
+		(embedded_fonts no)
+		(model "${KICAD10_3DMODEL_DIR}/Package_DIP.3dshapes/DIP-28_W15.24mm_Socket.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -654,19 +655,6 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-40_W15.24mm_LongPads"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "f4a17d99-8470-42f7-8caf-ea2a7a2c59aa")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
@@ -694,6 +682,7 @@
 			)
 		)
 		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start 1.56 -1.33)
 			(end 1.56 49.59)
@@ -1176,7 +1165,8 @@
 			(remove_unused_layers no)
 			(uuid "d49b710e-5f51-4d74-81a6-023f2928acd0")
 		)
-		(model "${KICAD8_3DMODEL_DIR}/Package_DIP.3dshapes/DIP-40_W15.24mm.wrl"
+		(embedded_fonts no)
+		(model "${KICAD10_3DMODEL_DIR}/Package_DIP.3dshapes/DIP-40_W15.24mm.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -1216,19 +1206,6 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-28_W15.24mm_Socket_LongPads"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "76342641-da17-4178-8110-86f6146986c5")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
@@ -1256,6 +1233,7 @@
 			)
 		)
 		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -1.44 -1.39)
 			(end -1.44 34.41)
@@ -1722,7 +1700,8 @@
 			(remove_unused_layers no)
 			(uuid "214ba596-5efe-4aa1-ba7e-33512ca42c26")
 		)
-		(model "${KICAD8_3DMODEL_DIR}/Package_DIP.3dshapes/DIP-28_W15.24mm_Socket.wrl"
+		(embedded_fonts no)
+		(model "${KICAD10_3DMODEL_DIR}/Package_DIP.3dshapes/DIP-28_W15.24mm_Socket.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -1735,13 +1714,24 @@
 		)
 	)
 	(gr_rect
+		(start 118.872 69.215)
+		(end 131.064 120.142)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(fill no)
+		(layer "Eco2.User")
+		(uuid "cc1adfe6-0aba-44f9-a7e8-0470d793791f")
+	)
+	(gr_rect
 		(start 147.955 69.215)
 		(end 160.147 105.029)
 		(stroke
 			(width 0.2)
 			(type default)
 		)
-		(fill none)
+		(fill no)
 		(layer "Eco2.User")
 		(uuid "15c7b4e3-20b0-4a37-b61c-329b3871d51a")
 	)
@@ -1752,129 +1742,14 @@
 			(width 0.2)
 			(type default)
 		)
-		(fill none)
+		(fill no)
 		(layer "Eco2.User")
 		(uuid "67fe2904-de15-4072-8b2d-a5a97329b4b3")
 	)
-	(gr_rect
-		(start 118.872 69.215)
-		(end 131.064 120.142)
-		(stroke
-			(width 0.2)
-			(type default)
-		)
-		(fill none)
-		(layer "Eco2.User")
-		(uuid "cc1adfe6-0aba-44f9-a7e8-0470d793791f")
-	)
-	(gr_text "-~{Halt}"
-		(at 118.618 114.142971 0)
+	(gr_text "-A11"
+		(at 118.618 71.12 0)
 		(layer "Eco1.User")
-		(uuid "01c3ca2e-bcbe-47fc-bcf0-7b44e465d162")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "A10-"
-		(at 155.473428 89.027 0)
-		(layer "Eco1.User")
-		(uuid "022251ca-f24a-45ed-8d20-e323b21ec718")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "D4-"
-		(at 156.444856 101.727 0)
-		(layer "Eco1.User")
-		(uuid "05bca149-1236-4970-b18a-744ec78cf791")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "D5-"
-		(at 176.358571 99.236692 0)
-		(layer "Eco1.User")
-		(uuid "0721b601-dd44-4fe3-91d4-62fd1436b85b")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "-D0"
-		(at 167.64 96.901 0)
-		(layer "Eco1.User")
-		(uuid "09144b7b-433f-462a-87b5-cec6b07168dd")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "-A4"
-		(at 147.701 84.059 0)
-		(layer "Eco1.User")
-		(uuid "0bbaa0de-3ad8-4a5f-8105-42da1ced31d8")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "D7-"
-		(at 156.444856 94.107 0)
-		(layer "Eco1.User")
-		(uuid "0c361d82-7880-4326-9f54-45612aab0dd3")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "-A1"
-		(at 167.64 91.821 0)
-		(layer "Eco1.User")
-		(uuid "0c4224bc-7305-40fa-97f9-9fd3be2056dd")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "D7-"
-		(at 176.358571 94.249 0)
-		(layer "Eco1.User")
-		(uuid "109f3a59-ed72-4fdd-88bb-9b22a482864f")
+		(uuid "d018a9bb-3505-4c7d-8ce9-3d5fc79aa089")
 		(effects
 			(font
 				(size 1.2 1.2)
@@ -1897,175 +1772,6 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "~{Res}-"
-		(at 126.479428 106.553 0)
-		(layer "Eco1.User")
-		(uuid "138c9fe2-d7d5-406c-9c70-0aca313d9c03")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "-~{MReq}"
-		(at 118.618 116.673734 0)
-		(layer "Eco1.User")
-		(uuid "13deb0fa-729d-49ab-abe3-97e9bd9a718e")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "A8-"
-		(at 156.616285 78.728538 0)
-		(layer "Eco1.User")
-		(uuid "1ae969ef-08db-429b-8b37-328eff69b8a2")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "~{BusR}-"
-		(at 125.222285 109.093 0)
-		(layer "Eco1.User")
-		(uuid "1b017516-414a-4862-a5e8-b745d541378a")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "A10-"
-		(at 126.365143 70.993 0)
-		(layer "Eco1.User")
-		(uuid "1b9ecb0b-c685-4fa9-b155-9ce70f9bdaaf")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "-D1"
-		(at 147.574 99.299 0)
-		(layer "Eco1.User")
-		(uuid "1bc6fecf-1c14-405c-80a7-c70d18c1fcae")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "-A3"
-		(at 167.64 86.741 0)
-		(layer "Eco1.User")
-		(uuid "1ecb3511-573c-4a85-a3f6-51ed3de3b109")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "~{Wr}-"
-		(at 127.565142 116.713 0)
-		(layer "Eco1.User")
-		(uuid "214d7ddf-c6fb-49b4-9c05-732833b3b908")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "A0-"
-		(at 127.508 96.393 0)
-		(layer "Eco1.User")
-		(uuid "23a82550-d1ab-40bf-bbc8-44e7440c46f8")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "Vcc-"
-		(at 155.702 71.247 0)
-		(layer "Eco1.User")
-		(uuid "2ad619d5-a79a-4a13-9809-730992b9daa5")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "D6-"
-		(at 176.358571 96.742846 0)
-		(layer "Eco1.User")
-		(uuid "2d3280dc-cff5-4c0b-a654-127d3e828606")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "Gnd-"
-		(at 126.308 98.933 0)
-		(layer "Eco1.User")
-		(uuid "2ee6bae2-f39f-4b6a-ae62-a4b44fb7c644")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "A4-"
-		(at 127.508 86.233 0)
-		(layer "Eco1.User")
-		(uuid "2fef202d-a012-4dda-87e9-0b49c507ed1e")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
 	(gr_text "-A13"
 		(at 118.618 76.181526 0)
 		(layer "Eco1.User")
@@ -2079,10 +1785,10 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "-A1"
-		(at 147.701 91.679 0)
+	(gr_text "-A14"
+		(at 118.618 78.712289 0)
 		(layer "Eco1.User")
-		(uuid "3142cdcd-4b44-430d-aaf9-432d20e00f62")
+		(uuid "7a218e78-da86-4525-b7b3-3587d35efd50")
 		(effects
 			(font
 				(size 1.2 1.2)
@@ -2092,10 +1798,10 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "-D0"
-		(at 118.618 104.019919 0)
+	(gr_text "-A15"
+		(at 118.618 81.243052 0)
 		(layer "Eco1.User")
-		(uuid "316c3981-d200-4b64-9203-9871274e40ef")
+		(uuid "95057335-bc8e-412a-b725-ff25c67c0b64")
 		(effects
 			(font
 				(size 1.2 1.2)
@@ -2105,166 +1811,10 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "A14-"
-		(at 155.473428 73.740846 0)
+	(gr_text "-Clk"
+		(at 118.618 83.773815 0)
 		(layer "Eco1.User")
-		(uuid "3370586b-00c1-4a10-b29d-9ee168b5d99e")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "A6-"
-		(at 127.508 81.153 0)
-		(layer "Eco1.User")
-		(uuid "35bbb1ed-1aab-476b-bf49-c0a490fff793")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "~{WE}-"
-		(at 176.149143 73.929 0)
-		(layer "Eco1.User")
-		(uuid "3c8f3a88-5fb4-4f2e-9ebd-e38879f26a17")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "-A3"
-		(at 147.701 86.599 0)
-		(layer "Eco1.User")
-		(uuid "3cceff81-04ac-449a-936d-9c7813bcba86")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "-A6"
-		(at 167.64 79.121 0)
-		(layer "Eco1.User")
-		(uuid "3e8205bc-de2a-41e8-9030-5f4f313e1b3f")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "-Gnd"
-		(at 167.64 104.521 0)
-		(layer "Eco1.User")
-		(uuid "3fa390b5-dde0-49d4-b54b-3a67e2b59d9f")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "A2-"
-		(at 127.508 91.313 0)
-		(layer "Eco1.User")
-		(uuid "401667be-203e-4cf5-9697-6c8c1ae9a917")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "A8-"
-		(at 176.53 79.121 0)
-		(layer "Eco1.User")
-		(uuid "42abf258-450c-4a85-816f-39bb8f87b98d")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "A9-"
-		(at 156.616285 81.222384 0)
-		(layer "Eco1.User")
-		(uuid "43f0f967-535f-45d9-a9d0-ba63abf81c8b")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "A9-"
-		(at 127.508 73.533 0)
-		(layer "Eco1.User")
-		(uuid "47dd7f8f-413b-4c91-8f7f-6cf0d5fa5f17")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "-D0"
-		(at 147.701 96.759 0)
-		(layer "Eco1.User")
-		(uuid "4e5da55b-db34-4248-9ed3-997876bf1cdc")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "~{CE}-"
-		(at 176.415714 91.821 0)
-		(layer "Eco1.User")
-		(uuid "4ef6077d-bd61-463a-a8ce-6287662259c2")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "A3-"
-		(at 127.508 88.773 0)
-		(layer "Eco1.User")
-		(uuid "4fecf81e-b735-4cae-bf3a-b3e1ba35f2c9")
+		(uuid "ed9a0e90-873e-4432-a9a3-70df38e7ef48")
 		(effects
 			(font
 				(size 1.2 1.2)
@@ -2287,10 +1837,10 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "~{OE}-"
-		(at 156.464 86.487 0)
+	(gr_text "-D3"
+		(at 118.618 88.835341 0)
 		(layer "Eco1.User")
-		(uuid "5710b041-455d-4de0-b241-45886e7bb97b")
+		(uuid "b0e3d72a-c4fc-4b5a-a1a2-72f741eed96d")
 		(effects
 			(font
 				(size 1.2 1.2)
@@ -2300,10 +1850,10 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "D3-"
-		(at 176.358571 104.521 0)
+	(gr_text "-D5"
+		(at 118.618 91.366104 0)
 		(layer "Eco1.User")
-		(uuid "572b9db9-1534-4ced-a7a3-06651d600eb5")
+		(uuid "fc09930f-5ebe-4b84-a3b7-c0143af12b51")
 		(effects
 			(font
 				(size 1.2 1.2)
@@ -2313,10 +1863,36 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "A5-"
-		(at 127.508 83.693 0)
+	(gr_text "-D6"
+		(at 118.618 93.896867 0)
 		(layer "Eco1.User")
-		(uuid "5b971b7f-118a-45d7-9b7c-66667ab10654")
+		(uuid "af0489df-51f7-4317-a29d-443c8faf5ef4")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "-Vcc"
+		(at 118.618 96.42763 0)
+		(layer "Eco1.User")
+		(uuid "ad91a733-4db7-4e59-b2bc-aec463ee98f2")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "-D2"
+		(at 118.618 98.958393 0)
+		(layer "Eco1.User")
+		(uuid "d6c0be7e-fbae-49ec-b25e-10ec13007703")
 		(effects
 			(font
 				(size 1.2 1.2)
@@ -2339,10 +1915,10 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "-A2"
-		(at 147.701 89.139 0)
+	(gr_text "-D0"
+		(at 118.618 104.019919 0)
 		(layer "Eco1.User")
-		(uuid "61fb2f92-4531-433b-9236-3fc841e2414b")
+		(uuid "316c3981-d200-4b64-9203-9871274e40ef")
 		(effects
 			(font
 				(size 1.2 1.2)
@@ -2352,23 +1928,10 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "-A15"
-		(at 147.701 71.359 0)
+	(gr_text "-D1"
+		(at 118.618 106.550682 0)
 		(layer "Eco1.User")
-		(uuid "6387d227-31b1-42f7-a2b4-3a821490635a")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "A7-"
-		(at 127.508 78.613 0)
-		(layer "Eco1.User")
-		(uuid "6d0d3d24-f4dc-4426-b0eb-3ce101695efa")
+		(uuid "fc66e97f-80aa-4ea1-9580-618fec0a41ae")
 		(effects
 			(font
 				(size 1.2 1.2)
@@ -2391,10 +1954,348 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "Vcc-"
-		(at 175.615715 71.501 0)
+	(gr_text "-~{MNI}"
+		(at 118.618 111.612208 0)
 		(layer "Eco1.User")
-		(uuid "6f1d276a-8f74-431e-85af-bc5b90148027")
+		(uuid "bf2fca67-47f6-4114-b7bd-7cee1032166d")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "-~{Halt}"
+		(at 118.618 114.142971 0)
+		(layer "Eco1.User")
+		(uuid "01c3ca2e-bcbe-47fc-bcf0-7b44e465d162")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "-~{MReq}"
+		(at 118.618 116.673734 0)
+		(layer "Eco1.User")
+		(uuid "13deb0fa-729d-49ab-abe3-97e9bd9a718e")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "~{BusR}-"
+		(at 125.222285 109.093 0)
+		(layer "Eco1.User")
+		(uuid "1b017516-414a-4862-a5e8-b745d541378a")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "~{BAck}-"
+		(at 125.450857 114.173 0)
+		(layer "Eco1.User")
+		(uuid "c0260cce-b607-476c-998d-cc18577dedff")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "~{Wait}-"
+		(at 125.965142 111.633 0)
+		(layer "Eco1.User")
+		(uuid "bf113de6-ee0a-44a5-b3bb-43ed77b5c278")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "Gnd-"
+		(at 126.308 98.933 0)
+		(layer "Eco1.User")
+		(uuid "2ee6bae2-f39f-4b6a-ae62-a4b44fb7c644")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "A10-"
+		(at 126.365143 70.993 0)
+		(layer "Eco1.User")
+		(uuid "1b9ecb0b-c685-4fa9-b155-9ce70f9bdaaf")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "~{Res}-"
+		(at 126.479428 106.553 0)
+		(layer "Eco1.User")
+		(uuid "138c9fe2-d7d5-406c-9c70-0aca313d9c03")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "Rfs-"
+		(at 126.822285 101.473 0)
+		(layer "Eco1.User")
+		(uuid "f63a83cb-1b05-43b9-9770-0297b877633b")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "~{M1}-"
+		(at 127.165142 104.013 0)
+		(layer "Eco1.User")
+		(uuid "ef352c63-a6af-4f26-8ca9-ea936ffdcf0e")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "~{Rd}-"
+		(at 127.393714 119.253 0)
+		(layer "Eco1.User")
+		(uuid "fed51f4d-0e73-4486-bf02-d6ef6368c3cd")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "A9-"
+		(at 127.508 73.533 0)
+		(layer "Eco1.User")
+		(uuid "47dd7f8f-413b-4c91-8f7f-6cf0d5fa5f17")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "A8-"
+		(at 127.508 76.073 0)
+		(layer "Eco1.User")
+		(uuid "aff38144-04fa-434e-8057-9f1859c5d294")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "A7-"
+		(at 127.508 78.613 0)
+		(layer "Eco1.User")
+		(uuid "6d0d3d24-f4dc-4426-b0eb-3ce101695efa")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "A6-"
+		(at 127.508 81.153 0)
+		(layer "Eco1.User")
+		(uuid "35bbb1ed-1aab-476b-bf49-c0a490fff793")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "A5-"
+		(at 127.508 83.693 0)
+		(layer "Eco1.User")
+		(uuid "5b971b7f-118a-45d7-9b7c-66667ab10654")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "A4-"
+		(at 127.508 86.233 0)
+		(layer "Eco1.User")
+		(uuid "2fef202d-a012-4dda-87e9-0b49c507ed1e")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "A3-"
+		(at 127.508 88.773 0)
+		(layer "Eco1.User")
+		(uuid "4fecf81e-b735-4cae-bf3a-b3e1ba35f2c9")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "A2-"
+		(at 127.508 91.313 0)
+		(layer "Eco1.User")
+		(uuid "401667be-203e-4cf5-9697-6c8c1ae9a917")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "A1-"
+		(at 127.508 93.853 0)
+		(layer "Eco1.User")
+		(uuid "d7939418-31fb-4e06-b985-09b22d142188")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "A0-"
+		(at 127.508 96.393 0)
+		(layer "Eco1.User")
+		(uuid "23a82550-d1ab-40bf-bbc8-44e7440c46f8")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "~{Wr}-"
+		(at 127.565142 116.713 0)
+		(layer "Eco1.User")
+		(uuid "214d7ddf-c6fb-49b4-9c05-732833b3b908")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "-D1"
+		(at 147.574 99.299 0)
+		(layer "Eco1.User")
+		(uuid "1bc6fecf-1c14-405c-80a7-c70d18c1fcae")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "-D2"
+		(at 147.574 101.839 0)
+		(layer "Eco1.User")
+		(uuid "7d42bdd4-d8a6-4cd2-99a5-28f717b17e48")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "-A15"
+		(at 147.701 71.359 0)
+		(layer "Eco1.User")
+		(uuid "6387d227-31b1-42f7-a2b4-3a821490635a")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "-A7"
+		(at 147.701 76.439 0)
+		(layer "Eco1.User")
+		(uuid "b6dbb1fa-e5cb-486f-85c5-eb4501301513")
 		(effects
 			(font
 				(size 1.2 1.2)
@@ -2417,10 +2318,309 @@
 			(justify left bottom)
 		)
 	)
+	(gr_text "-A5"
+		(at 147.701 81.519 0)
+		(layer "Eco1.User")
+		(uuid "769c9dce-770e-459f-8f39-16de2662f370")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "-A4"
+		(at 147.701 84.059 0)
+		(layer "Eco1.User")
+		(uuid "0bbaa0de-3ad8-4a5f-8105-42da1ced31d8")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "-A3"
+		(at 147.701 86.599 0)
+		(layer "Eco1.User")
+		(uuid "3cceff81-04ac-449a-936d-9c7813bcba86")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "-A2"
+		(at 147.701 89.139 0)
+		(layer "Eco1.User")
+		(uuid "61fb2f92-4531-433b-9236-3fc841e2414b")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "-A1"
+		(at 147.701 91.679 0)
+		(layer "Eco1.User")
+		(uuid "3142cdcd-4b44-430d-aaf9-432d20e00f62")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "-A0"
+		(at 147.701 94.219 0)
+		(layer "Eco1.User")
+		(uuid "eacfa25b-6e47-4780-881d-f0573b75cbc1")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "-D0"
+		(at 147.701 96.759 0)
+		(layer "Eco1.User")
+		(uuid "4e5da55b-db34-4248-9ed3-997876bf1cdc")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "-Gnd"
+		(at 147.701 104.379 0)
+		(layer "Eco1.User")
+		(uuid "d2069a7f-a98d-46c7-ba4d-927194601946")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "-A12"
+		(at 147.828 73.899 0)
+		(layer "Eco1.User")
+		(uuid "df73b875-2c21-41bf-bf1d-599b0c693380")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "A14-"
+		(at 155.473428 73.740846 0)
+		(layer "Eco1.User")
+		(uuid "3370586b-00c1-4a10-b29d-9ee168b5d99e")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "A13-"
+		(at 155.473428 76.234692 0)
+		(layer "Eco1.User")
+		(uuid "cd1f368c-db28-47e8-aded-a7e1832a10d2")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "A11-"
+		(at 155.473428 83.71623 0)
+		(layer "Eco1.User")
+		(uuid "edf0474d-4921-4b01-92b2-3eaab8af1430")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "A10-"
+		(at 155.473428 89.027 0)
+		(layer "Eco1.User")
+		(uuid "022251ca-f24a-45ed-8d20-e323b21ec718")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "Vcc-"
+		(at 155.702 71.247 0)
+		(layer "Eco1.User")
+		(uuid "2ad619d5-a79a-4a13-9809-730992b9daa5")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "D7-"
+		(at 156.444856 94.107 0)
+		(layer "Eco1.User")
+		(uuid "0c361d82-7880-4326-9f54-45612aab0dd3")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "D6-"
+		(at 156.444856 96.647 0)
+		(layer "Eco1.User")
+		(uuid "f8c5e299-0a7e-49bb-8940-d99b843ffc98")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "D5-"
+		(at 156.444856 99.187 0)
+		(layer "Eco1.User")
+		(uuid "dae05f8a-3913-4d9d-956f-b7fddbbbf705")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "D4-"
+		(at 156.444856 101.727 0)
+		(layer "Eco1.User")
+		(uuid "05bca149-1236-4970-b18a-744ec78cf791")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
 	(gr_text "D3-"
 		(at 156.444856 104.267 0)
 		(layer "Eco1.User")
 		(uuid "7233e784-b813-4cb3-a7b1-da418b679f65")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "~{OE}-"
+		(at 156.464 86.487 0)
+		(layer "Eco1.User")
+		(uuid "5710b041-455d-4de0-b241-45886e7bb97b")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "~{CE}-"
+		(at 156.464 91.694 0)
+		(layer "Eco1.User")
+		(uuid "d5ebdcd9-a123-4667-a8aa-0de88d539e55")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "A8-"
+		(at 156.616285 78.728538 0)
+		(layer "Eco1.User")
+		(uuid "1ae969ef-08db-429b-8b37-328eff69b8a2")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "A9-"
+		(at 156.616285 81.222384 0)
+		(layer "Eco1.User")
+		(uuid "43f0f967-535f-45d9-a9d0-ba63abf81c8b")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "-D1"
+		(at 167.513 99.441 0)
+		(layer "Eco1.User")
+		(uuid "881f3533-73c4-4bce-b1f8-00dddca4812c")
 		(effects
 			(font
 				(size 1.2 1.2)
@@ -2456,71 +2656,6 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "-A4"
-		(at 167.64 84.201 0)
-		(layer "Eco1.User")
-		(uuid "7458fe5d-bfe4-453e-bfbd-c040f6a78cee")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "-A5"
-		(at 147.701 81.519 0)
-		(layer "Eco1.User")
-		(uuid "769c9dce-770e-459f-8f39-16de2662f370")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "-A14"
-		(at 118.618 78.712289 0)
-		(layer "Eco1.User")
-		(uuid "7a218e78-da86-4525-b7b3-3587d35efd50")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "-D2"
-		(at 147.574 101.839 0)
-		(layer "Eco1.User")
-		(uuid "7d42bdd4-d8a6-4cd2-99a5-28f717b17e48")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "-A12"
-		(at 167.767 74.041 0)
-		(layer "Eco1.User")
-		(uuid "7dced03e-2ef1-46f2-80d6-5202da088e13")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
 	(gr_text "-A7"
 		(at 167.64 76.581 0)
 		(layer "Eco1.User")
@@ -2534,244 +2669,10 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "-D1"
-		(at 167.513 99.441 0)
+	(gr_text "-A6"
+		(at 167.64 79.121 0)
 		(layer "Eco1.User")
-		(uuid "881f3533-73c4-4bce-b1f8-00dddca4812c")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "A11-"
-		(at 175.387143 84.201 0)
-		(layer "Eco1.User")
-		(uuid "8b248007-775e-4f57-a94f-c1c097ac9648")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "-A15"
-		(at 118.618 81.243052 0)
-		(layer "Eco1.User")
-		(uuid "95057335-bc8e-412a-b725-ff25c67c0b64")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "A13-"
-		(at 175.387143 76.581 0)
-		(layer "Eco1.User")
-		(uuid "a08fa70a-ed0b-42d1-bea4-e31a9ef05246")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "-~{Ioreq}"
-		(at 118.364 119.5045 0)
-		(layer "Eco1.User")
-		(uuid "ab0dc2df-8e25-442d-b000-daf23697cb52")
-		(effects
-			(font
-				(size 1.5 1.5)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "A9-"
-		(at 176.53 81.661 0)
-		(layer "Eco1.User")
-		(uuid "ad1bcd23-c536-4802-984f-aa62e218f377")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "-Vcc"
-		(at 118.618 96.42763 0)
-		(layer "Eco1.User")
-		(uuid "ad91a733-4db7-4e59-b2bc-aec463ee98f2")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "-D6"
-		(at 118.618 93.896867 0)
-		(layer "Eco1.User")
-		(uuid "af0489df-51f7-4317-a29d-443c8faf5ef4")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "-A2"
-		(at 167.64 89.281 0)
-		(layer "Eco1.User")
-		(uuid "af22d9e2-53d9-4fd8-90fd-f7bc7b04e1be")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "A8-"
-		(at 127.508 76.073 0)
-		(layer "Eco1.User")
-		(uuid "aff38144-04fa-434e-8057-9f1859c5d294")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "D4-"
-		(at 176.358571 101.730538 0)
-		(layer "Eco1.User")
-		(uuid "b0070784-3e9d-4cd8-a0a5-77e21089936f")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "-D3"
-		(at 118.618 88.835341 0)
-		(layer "Eco1.User")
-		(uuid "b0e3d72a-c4fc-4b5a-a1a2-72f741eed96d")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "-A7"
-		(at 147.701 76.439 0)
-		(layer "Eco1.User")
-		(uuid "b6dbb1fa-e5cb-486f-85c5-eb4501301513")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "~{Wait}-"
-		(at 125.965142 111.633 0)
-		(layer "Eco1.User")
-		(uuid "bf113de6-ee0a-44a5-b3bb-43ed77b5c278")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "-~{MNI}"
-		(at 118.618 111.612208 0)
-		(layer "Eco1.User")
-		(uuid "bf2fca67-47f6-4114-b7bd-7cee1032166d")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "~{BAck}-"
-		(at 125.450857 114.173 0)
-		(layer "Eco1.User")
-		(uuid "c0260cce-b607-476c-998d-cc18577dedff")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "A13-"
-		(at 155.473428 76.234692 0)
-		(layer "Eco1.User")
-		(uuid "cd1f368c-db28-47e8-aded-a7e1832a10d2")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "-A11"
-		(at 118.618 71.12 0)
-		(layer "Eco1.User")
-		(uuid "d018a9bb-3505-4c7d-8ce9-3d5fc79aa089")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "-Gnd"
-		(at 147.701 104.379 0)
-		(layer "Eco1.User")
-		(uuid "d2069a7f-a98d-46c7-ba4d-927194601946")
+		(uuid "3e8205bc-de2a-41e8-9030-5f4f313e1b3f")
 		(effects
 			(font
 				(size 1.2 1.2)
@@ -2794,10 +2695,10 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "A10-"
-		(at 175.387143 89.281 0)
+	(gr_text "-A4"
+		(at 167.64 84.201 0)
 		(layer "Eco1.User")
-		(uuid "d4ed39d0-e5b0-4090-805d-c9bc71f1f335")
+		(uuid "7458fe5d-bfe4-453e-bfbd-c040f6a78cee")
 		(effects
 			(font
 				(size 1.2 1.2)
@@ -2807,10 +2708,10 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "~{CE}-"
-		(at 156.464 91.694 0)
+	(gr_text "-A3"
+		(at 167.64 86.741 0)
 		(layer "Eco1.User")
-		(uuid "d5ebdcd9-a123-4667-a8aa-0de88d539e55")
+		(uuid "1ecb3511-573c-4a85-a3f6-51ed3de3b109")
 		(effects
 			(font
 				(size 1.2 1.2)
@@ -2820,10 +2721,10 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "-D2"
-		(at 118.618 98.958393 0)
+	(gr_text "-A2"
+		(at 167.64 89.281 0)
 		(layer "Eco1.User")
-		(uuid "d6c0be7e-fbae-49ec-b25e-10ec13007703")
+		(uuid "af22d9e2-53d9-4fd8-90fd-f7bc7b04e1be")
 		(effects
 			(font
 				(size 1.2 1.2)
@@ -2833,101 +2734,10 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "A1-"
-		(at 127.508 93.853 0)
+	(gr_text "-A1"
+		(at 167.64 91.821 0)
 		(layer "Eco1.User")
-		(uuid "d7939418-31fb-4e06-b985-09b22d142188")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "~{OE}-"
-		(at 176.403 86.741 0)
-		(layer "Eco1.User")
-		(uuid "d97e23f8-3072-4603-be9b-3ffe1c9e2d2f")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "D5-"
-		(at 156.444856 99.187 0)
-		(layer "Eco1.User")
-		(uuid "dae05f8a-3913-4d9d-956f-b7fddbbbf705")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "-A12"
-		(at 147.828 73.899 0)
-		(layer "Eco1.User")
-		(uuid "df73b875-2c21-41bf-bf1d-599b0c693380")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "-A0"
-		(at 147.701 94.219 0)
-		(layer "Eco1.User")
-		(uuid "eacfa25b-6e47-4780-881d-f0573b75cbc1")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "-Clk"
-		(at 118.618 83.773815 0)
-		(layer "Eco1.User")
-		(uuid "ed9a0e90-873e-4432-a9a3-70df38e7ef48")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "A11-"
-		(at 155.473428 83.71623 0)
-		(layer "Eco1.User")
-		(uuid "edf0474d-4921-4b01-92b2-3eaab8af1430")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.2)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "~{M1}-"
-		(at 127.165142 104.013 0)
-		(layer "Eco1.User")
-		(uuid "ef352c63-a6af-4f26-8ca9-ea936ffdcf0e")
+		(uuid "0c4224bc-7305-40fa-97f9-9fd3be2056dd")
 		(effects
 			(font
 				(size 1.2 1.2)
@@ -2950,10 +2760,114 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "Rfs-"
-		(at 126.822285 101.473 0)
+	(gr_text "-D0"
+		(at 167.64 96.901 0)
 		(layer "Eco1.User")
-		(uuid "f63a83cb-1b05-43b9-9770-0297b877633b")
+		(uuid "09144b7b-433f-462a-87b5-cec6b07168dd")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "-Gnd"
+		(at 167.64 104.521 0)
+		(layer "Eco1.User")
+		(uuid "3fa390b5-dde0-49d4-b54b-3a67e2b59d9f")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "-A12"
+		(at 167.767 74.041 0)
+		(layer "Eco1.User")
+		(uuid "7dced03e-2ef1-46f2-80d6-5202da088e13")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "A13-"
+		(at 175.387143 76.581 0)
+		(layer "Eco1.User")
+		(uuid "a08fa70a-ed0b-42d1-bea4-e31a9ef05246")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "A11-"
+		(at 175.387143 84.201 0)
+		(layer "Eco1.User")
+		(uuid "8b248007-775e-4f57-a94f-c1c097ac9648")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "A10-"
+		(at 175.387143 89.281 0)
+		(layer "Eco1.User")
+		(uuid "d4ed39d0-e5b0-4090-805d-c9bc71f1f335")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "Vcc-"
+		(at 175.615715 71.501 0)
+		(layer "Eco1.User")
+		(uuid "6f1d276a-8f74-431e-85af-bc5b90148027")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "~{WE}-"
+		(at 176.149143 73.929 0)
+		(layer "Eco1.User")
+		(uuid "3c8f3a88-5fb4-4f2e-9ebd-e38879f26a17")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "D7-"
+		(at 176.358571 94.249 0)
+		(layer "Eco1.User")
+		(uuid "109f3a59-ed72-4fdd-88bb-9b22a482864f")
 		(effects
 			(font
 				(size 1.2 1.2)
@@ -2964,9 +2878,9 @@
 		)
 	)
 	(gr_text "D6-"
-		(at 156.444856 96.647 0)
+		(at 176.358571 96.742846 0)
 		(layer "Eco1.User")
-		(uuid "f8c5e299-0a7e-49bb-8940-d99b843ffc98")
+		(uuid "2d3280dc-cff5-4c0b-a654-127d3e828606")
 		(effects
 			(font
 				(size 1.2 1.2)
@@ -2976,10 +2890,10 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "-D5"
-		(at 118.618 91.366104 0)
+	(gr_text "D5-"
+		(at 176.358571 99.236692 0)
 		(layer "Eco1.User")
-		(uuid "fc09930f-5ebe-4b84-a3b7-c0143af12b51")
+		(uuid "0721b601-dd44-4fe3-91d4-62fd1436b85b")
 		(effects
 			(font
 				(size 1.2 1.2)
@@ -2989,10 +2903,10 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "-D1"
-		(at 118.618 106.550682 0)
+	(gr_text "D4-"
+		(at 176.358571 101.730538 0)
 		(layer "Eco1.User")
-		(uuid "fc66e97f-80aa-4ea1-9580-618fec0a41ae")
+		(uuid "b0070784-3e9d-4cd8-a0a5-77e21089936f")
 		(effects
 			(font
 				(size 1.2 1.2)
@@ -3002,10 +2916,10 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "~{Rd}-"
-		(at 127.393714 119.253 0)
+	(gr_text "D3-"
+		(at 176.358571 104.521 0)
 		(layer "Eco1.User")
-		(uuid "fed51f4d-0e73-4486-bf02-d6ef6368c3cd")
+		(uuid "572b9db9-1534-4ced-a7a3-06651d600eb5")
 		(effects
 			(font
 				(size 1.2 1.2)
@@ -3015,4 +2929,70 @@
 			(justify left bottom)
 		)
 	)
+	(gr_text "~{OE}-"
+		(at 176.403 86.741 0)
+		(layer "Eco1.User")
+		(uuid "d97e23f8-3072-4603-be9b-3ffe1c9e2d2f")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "~{CE}-"
+		(at 176.415714 91.821 0)
+		(layer "Eco1.User")
+		(uuid "4ef6077d-bd61-463a-a8ce-6287662259c2")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "A8-"
+		(at 176.53 79.121 0)
+		(layer "Eco1.User")
+		(uuid "42abf258-450c-4a85-816f-39bb8f87b98d")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "A9-"
+		(at 176.53 81.661 0)
+		(layer "Eco1.User")
+		(uuid "ad1bcd23-c536-4802-984f-aa62e218f377")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "-~{Ioreq}"
+		(at 118.364 119.5045 0)
+		(layer "Eco1.User")
+		(uuid "ab0dc2df-8e25-442d-b000-daf23697cb52")
+		(effects
+			(font
+				(size 1.5 1.5)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(embedded_fonts no)
 )

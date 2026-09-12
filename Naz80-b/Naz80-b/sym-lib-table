@@ -1,5 +1,6 @@
 (sym_lib_table
-  (version 7)
-  (lib (name "2024-02-08_16-17-07")(type "KiCad")(uri "${KIPRJMOD}/2024-02-08_16-17-07.kicad_sym")(options "")(descr ""))
-  (lib (name "Interface_UART2")(type "KiCad")(uri "${KIPRJMOD}/Interface_UART2.kicad_sym")(options "")(descr ""))
+	(version 7)
+	(lib (name "2024-02-08_16-17-07") (type "KiCad") (uri "${KIPRJMOD}/2024-02-08_16-17-07.kicad_sym") (options "") (descr ""))
+	(lib (name "Interface_UART2") (type "KiCad") (uri "${KIPRJMOD}/Interface_UART2.kicad_sym") (options "") (descr ""))
+	(lib (name "Naz80") (type "KiCad") (uri "${KIPRJMOD}/Naz80.kicad_sym") (options "") (descr ""))
 )

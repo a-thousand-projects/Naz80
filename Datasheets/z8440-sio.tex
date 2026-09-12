@@ -1,0 +1,144 @@
+% ===========================================================================
+%  Z8440/1/2/4, Z84C40/1/2/3/4 Serial Input/Output Controller
+%  Recreation of Zilog product specification PS018301-0602, pp. 99-122.
+%  STYLE PROOF: p.99 complete + Figures 1 and 2.
+% ===========================================================================
+\documentclass[10pt,twoside]{article}
+\usepackage[letterpaper,top=0.80in,bottom=0.80in,left=0.95in,right=0.95in,
+            footskip=0.42in]{geometry}
+\usepackage{z80sio}
+
+\begin{document}
+\setcounter{page}{99}
+
+% ------------------------------- PAGE 99 -----------------------------------
+\masthead{{\scshape Product Specification}}
+         {Z8440/1/2/4,\\Z84C40/1/2/3/4}
+         {{\scshape Serial Input/Output Controller}}
+
+\dsrule
+\dshead{FEATURES}
+
+\begin{dscols}
+\begin{featlist}
+\item Two independent full-duplex channels, with separate control and status
+      lines for modems or other devices.
+\item Data rate in the x1 clock mode of 0 to 2.0M bits/second with a
+      10 MHz clock.
+\item NMOS version for cost sensitive performance solutions, CMOS version
+      for the designs requiring low power consumption.
+\item NMOS Z0844x04 -- 4 MHz, Z0844x06 -- 6.17 MHz (Where x is the designator
+      for the bonding option; 0, 1, 2 or 4)
+\item CMOS Z84C4x06 -- DC to 6/7 MHz, Z84C4x08 -- DC to 8 MHz, Z84C4x10 --
+      DC to 10 MHz (Where x is the designator for the bonding option,
+      0, 1, 2, or 4)
+\item 6 MHz version supports 6.144 MHz CPU clock operation.
+\end{featlist}
+
+\columnbreak
+
+\begin{featlist}
+\item Asynchronous protocols: everything necessary for complete messages in
+      5, 6, 7, or 8 bits/character. Includes variable stop bits and several
+      clock-rate multipliers; break generation and detection; parity; overrun
+      and framing error detection.
+\item Synchronous protocols: everything necessary for complete bit- or
+      byte-oriented messages in 5, 6, 7, or 8 bits/character, including IBM
+      Bisync, SDLC, HDLC, CCITT-X.25 and others. Automatic CRC
+      generation/checking, sync character and zero insertion/deletion, abort
+      generation/detection, and flag insertion.
+\item Receiver data registers quadruply buffered, transmitter registers doubly
+      buffered.
+\item Highly sophisticated and flexible daisy-chain interrupt vectoring for
+      interrupts without external logic.
+\end{featlist}
+\end{dscols}
+
+\dsrule
+\dshead{GENERAL DESCRIPTION}
+
+\begin{dscols}
+The Z80 SIO (hereinafter referred to as the Z80 SIO or, SIO) Serial
+Input/Output Controller is a dual-channel data communication interface with
+extraordinary versatility and capability. Its basic functions as a
+serial-to-parallel, parallel-to-serial converter/controller can be programmed
+by a CPU for a broad range of serial communication applications.
+
+The device supports all common asynchronous and synchronous protocols, byte-
+or bit-oriented, and performs all of the functions traditionally done by
+UARTs, USARTs, and synchronous communication controllers combined, plus
+additional functions traditionally performed by the CPU. Moreover, it does
+this on two fully-independent channels, with an exceptionally sophisticated
+interrupt structure that allows very fast transfers.
+
+Full interfacing is provided for CPU or DMA control. In addition to data
+communication, the circuit can handle virtually all types of serial I/O with
+fast, or slow, peripheral devices. While designed primarily as a member of the
+Z80 family, its versatility makes it well suited to many other CPUs.
+
+\textbf{The Z80 SIO uses a single +5V power supply and the standard Z80 family
+single-phase clock. The SIO/0, SIO/1, and SIO/2 are packaged in a 40-pin DIP,
+the SIO/4 is packaged in a 44-pin PCC and the SIO/3 is packaged in a 44-pin
+QFP. Note that SIO/3 is only available in CMOS and in QFP package.}
+\end{dscols}
+
+\dsrule
+\dshead{PIN DESCRIPTION}
+
+\begin{dscols}
+Figures 1 through 6 illustrate the three 40-pin configurations (bonding
+options) available in the Z80 SIO (hereafter referred to as SIO or Z80 SIO).
+The constraints of a 40-pin package make it impossible to bring out the
+Receive Clock (\ol{RxC}), Transmit Clock (\ol{TxC}), Data Terminal Ready
+(\ol{DTR}) and Sync (\ol{SYNC}) signals for both channels. Therefore, either
+Channel B lacks a signal or two signals are bonded together.
+
+\begin{featlist}
+\item Z80 SIO/2 lacks \ol{SYNCB}
+\item Z80 SIO/1 lacks \ol{DTRB}
+\end{featlist}
+
+\columnbreak
+
+\begin{featlist}
+\item Z80 SIO/0 has all four signals, but \ol{TxCB} and \ol{RxCB} are bonded
+      together
+\end{featlist}
+
+\vspace{5pt}
+\textbf{The 44-pin package, the Z80 SIO/4 for PLCC package, and Z80 SIO/3 for
+QFP, has all options (Figure 7a and 7b).}
+
+The first bonding option above (SIO/2) is the preferred version for most
+applications. The pin descriptions are as follows:
+
+\pin{B/\ol{A}.}{Channel A or B Select}{(input, High selects Channel B).
+This input defines which channel is accessed during a data}
+\end{dscols}
+
+\pagefootrule
+\clearpage
+
+% ------------------------------- PAGE 100 ----------------------------------
+% (style proof: Figures 1 and 2 only; Figures 3 and 4 follow in the full build)
+\dsrule
+\vspace{6pt}
+
+\noindent
+\begin{minipage}[t]{0.56\textwidth}
+  \centering
+  \input{figures/fig01-pinfunc-sio2}
+  \figcap{1}{Pin Functions}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.42\textwidth}
+  \centering
+  \input{figures/fig02-dip-sio2}
+  \figcap{2}{40-pin Dual-In-Line Package (DIP),\\Pin Assignments}
+\end{minipage}
+
+\vspace{8pt}
+\dsrule
+
+\pagefootrule
+\end{document}
