@@ -9950,7 +9950,7 @@
 		)
 		(uuid "6c5b0a0e-ac5c-4ddc-8be3-31f7394c37f6")
 	)
-	(text "0x8000 - 0xFFFF"
+	(text ""
 		(exclude_from_sim no)
 		(at 377.19 94.488 0)
 		(effects
@@ -9962,15 +9962,16 @@
 		)
 		(uuid "72634245-0f1f-4a46-ab8a-59bac720ddee")
 	)
-	(text "64K Rom with 32K split\n\n0x0000 - 0xCFFF\n0xD000 - 0xFFFF"
+	(text "64K Rom with 32K split\n\n0x0000 - 0x7FFF\n0x8000 - 0xFFFF\n\n0x0000 - 7FFFF (addressable)"
 		(exclude_from_sim no)
-		(at 318.516 94.742 0)
+		(at 316.23 93.726 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 				(thickness 0.254)
 				(bold yes)
 			)
+			(justify left)
 		)
 		(uuid "780268da-4612-40bd-a24c-c908485ebc8c")
 	)
@@ -10009,19 +10010,20 @@
 		)
 		(uuid "85a67cee-008a-4150-802c-06885b843689")
 	)
-	(text "32k Ram"
+	(text "32k Ram\n\n0x8000 - 0xFFFF"
 		(exclude_from_sim no)
-		(at 377.952 91.44 0)
+		(at 367.03 92.456 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 				(thickness 0.254)
 				(bold yes)
 			)
+			(justify left)
 		)
 		(uuid "9867e0af-af2d-4b78-89e6-04f816d7cbf1")
 	)
-	(text "POI : 0x80 - 0x83"
+	(text "POI : 0x20 - 0xE0"
 		(exclude_from_sim no)
 		(at 211.074 193.802 0)
 		(effects
