@@ -243,7 +243,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": ""
+      "sch_revision": "1"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -471,7 +471,7 @@
       "no_connect_dangling": "warning",
       "pin_not_connected": "error",
       "pin_not_driven": "error",
-      "pin_to_pin": "warning",
+      "pin_to_pin": "error",
       "power_pin_not_driven": "error",
       "same_local_global_label": "warning",
       "similar_label_and_power": "warning",
@@ -604,7 +604,51 @@
       "sort_asc": true,
       "sort_field": "Reference"
     },
-    "bus_aliases": {},
+    "bus_aliases": {
+      "ADDR_DATA_BUS": [
+        "A[0..15]",
+        "D[0..7]"
+      ],
+      "CONTROL_BUS": [
+        "~{M1}",
+        "~{INT}",
+        "~{RFSH}",
+        "~{WAIT}",
+        "~{HALT}",
+        "~{NMI}",
+        "~{RD}",
+        "~{WR}",
+        "~{MREQ}",
+        "~{IO_RQ}",
+        "~{BUS_RQ}",
+        "~{BUS_ACK}",
+        "~{RESET}"
+      ],
+      "SERIAL_BUS_A": [
+        "RxDA",
+        "~{RxCA}",
+        "TxDA",
+        "~{TxCA}",
+        "~{SYNCA}",
+        "~{W/RDYA}",
+        "~{RTSA}",
+        "~{CTSA}",
+        "~{DTRA}",
+        "~{DCDA}"
+      ],
+      "SERIAL_BUS_B": [
+        "RxDB",
+        "~{RxCB}",
+        "TxDB",
+        "~{TxCB}",
+        "~{SYNCB}",
+        "~{W/RDYB}",
+        "~{RTSB}",
+        "~{CTSB}",
+        "~{DTRB}",
+        "~{DCDB}"
+      ]
+    },
     "connection_grid_size": 50.0,
     "drawing": {
       "dashed_lines_dash_length_ratio": 12.0,
@@ -653,17 +697,13 @@
         "uuid": "be26b147-87c0-4fba-8b1e-e832bb147581"
       }
     ],
-    "used_designators": "J2,C11-12,Y1,#PWR18-19,#PWR22,#PWR47,#PWR49-50,U8,U11-13",
+    "used_designators": "R3-12,J2-9,D2,C11-16,Y1-4,#PWR6,#PWR14-15,#PWR18-19,#PWR22,#PWR27-37,#PWR47,#PWR49-56,U3,U6,U8,U11-13",
     "variants": []
   },
   "sheets": [
     [
       "be26b147-87c0-4fba-8b1e-e832bb147581",
       "Naz80-b"
-    ],
-    [
-      "efc0923a-9d80-4846-ac3c-d739d110316f",
-      "Indicators"
     ]
   ],
   "text_variables": {},
